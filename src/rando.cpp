@@ -11,9 +11,9 @@
 **/
 bool Rando::isDivisibleBy(int first, int second)
 {
-	if (first % second == 0)
-		return true;
-	return true;
+  if (first % second == 0)
+    return true;
+  return false;
 }
 
 /**
