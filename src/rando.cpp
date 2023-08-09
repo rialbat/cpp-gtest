@@ -2,6 +2,8 @@
 #include "rando.h"
 #include <string>
 #include <vector>
+#include <algorithm>
+#include <cctype>
 
 /**
  * Determines if either first or second parameter is evenly 
@@ -9,7 +11,8 @@
 **/
 bool Rando::isDivisibleBy(int first, int second)
 {
-
+	if (first % second == 0)
+		return true;
 	return true;
 }
 
@@ -19,8 +22,13 @@ bool Rando::isDivisibleBy(int first, int second)
 **/
 bool Rando::isPalindrome(std::string eval)
 {
+  std::string l_eval(eval.length(), NULL);
+  std::transform(eval.begin(), eval.end(), l_eval.begin(), [](unsigned char c){ return std::tolower(c); });
 
-	return true;
+	if (l_eval == std::string(eval.rbegin(), eval.rend()))
+    return true;
+
+  return false;
 }
 
 /**

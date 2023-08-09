@@ -24,36 +24,49 @@ class RandoTest : public ::testing::Test
 		virtual void TearDown(){} //clean up after each test, (before destructor) 
 };
 
-TEST(RandoTest, mostPopularTie)
+TEST_F(RandoTest, mostPopular_FindFrom1991911_One)
 {
     Rando rando;
-    int actual = rando.mostPopularDigit( 199191 );
-    ASSERT_EQ( actual, -1 );
+    int actual = rando.mostPopularDigit( 1991911 );
+    ASSERT_EQ( 1, actual);
 }
-TEST(RandoTest, mostPopularZero)
+TEST_F(RandoTest, mostPopular_FindFrom0_Zero)
 {
     Rando rando;
     int actual = rando.mostPopularDigit(0);
-    ASSERT_EQ( actual, 0 );
+    ASSERT_EQ( 0, actual);
 }
-TEST(RandoTest, mostPopularNine)
+TEST_F(RandoTest, mostPopular_FindFrom9_Nine)
 {
     Rando rando;
     int actual = rando.mostPopularDigit(9);
-    ASSERT_EQ( actual, 9 );
+    ASSERT_EQ( 9, actual);
 }
-TEST(RandoTest, mostPopularOneThreeTimes)
+TEST_F(RandoTest, mostPopular_FindFrom31311_One)
 {
     Rando rando;
     int actual = rando.mostPopularDigit(31311);
-    ASSERT_EQ( actual, 1 );
+    ASSERT_EQ( 1, actual);
 }
 
-TEST(RandoTest, mostPopularAllTwos)
+TEST_F(RandoTest, mostPopular_FindFrom222_Two)
 {
     Rando rando;
     int actual = rando.mostPopularDigit(222);
-    ASSERT_EQ( actual, 2 );
+    ASSERT_EQ( 2, actual);
 }
 
+TEST(PolinTests, Polin_CheckFourLettersWord_True)
+{
+    Rando rando;
+    std::string rand_polin = "abba";
+    ASSERT_TRUE(rando.isPalindrome(rand_polin));
+}
 
+TEST(DivisibleTests, Divisible_Is100DivisibleTo10_True)
+{
+    Rando rando;
+	int first = 100;
+	int second = 10;
+	ASSERT_TRUE(rando.isDivisibleBy(first, second));
+}

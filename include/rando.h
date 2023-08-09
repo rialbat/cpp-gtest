@@ -1,5 +1,7 @@
+#pragma once
 #ifndef RANDO_H
 #define RANDO_H
+
 #include <string>
 
 class Rando
